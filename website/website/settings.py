@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'twishar.mysql.pythonanywhere-services.com',
         'NAME': 'django',
-        'USER' : 'postgres',
-        'PASSWORD' : '123twishar',
-        'HOST' : '',
-        'PORT' : '',
     }
 }
 
