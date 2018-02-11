@@ -2,7 +2,8 @@
 import os
 import csv
 import sys
-from website.website.settings import MEDIA_ROOT
+from website.settings import MEDIA_ROOT
+from orders.models import Order
 
 def data_export(model):
     data = model.objects.all().values()
@@ -33,4 +34,3 @@ def data_import(model, filename=None):
             answer = str(sys.exc_info())
         csvfile.close()
     return answer
-

@@ -1,6 +1,7 @@
 
-{% extends 'music/base.html' %}
-{% block title%} Register{% endblock %}
+{% extends 'orders/base.html' %}
+{% block title%} Add a New Album {% endblock %}
+{% block albums_active %} active {% endblock %}
 
 {% block body %}
 
@@ -11,7 +12,7 @@
         <div class = "col-sm-12 col-md-7">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>Create a New Account</h3>
+                    <h3>Add a new album</h3>
                     {% if error_message %}
                         <p><strong>{{ error_message }}</strong></p>
                     {% endif %}

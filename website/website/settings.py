@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'music.apps.MusicConfig',
+    'orders.apps.MusicConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'twishar.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django',
+        'USER' : 'postgres',
+        'PASSWORD' : '123twishar',
+        'HOST' : '',
+        'PORT' : '',
     }
 }
 
