@@ -1,0 +1,50 @@
+{% extends 'orders/base.html' %}
+{% block admin_active %} active {% endblock %}
+{% block body %}
+
+
+    <div class = "albums-container container-fluid">
+
+        <div class="row">
+
+            {% for order in object_list %}
+
+            <div class="col-sm-4 col-lg-2">
+                <div class = "thumbnail">
+
+                    <!-- Album logo -->
+
+                    <h3>Internal : {{order.internalID}}</h3>
+                    <h4>OrderID : {{ order.orderID }}</h4>
+                    <h4>Status : {{ order.status }}</h4>
+                    <h4>Amount : {{ order.amount }}</h4>
+
+                </div>
+
+                 <div class="caption">
+                    <h2>{{ album.album_title }}</h2>
+                    <h4>{{ album.artist }}</h4>
+
+                    <!--Details-->
+                    <a href="{% url 'orders:detail' order.id %}" class="btn btn-primary btn-sm">View Details</a>
+
+                    <!--Delete-->
+                    <form action="{% url 'orders:order-delete' order.id %}" method="post" style="display: inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="album_id" value="{{album.id}}">
+                        <button type="submit" class="btn btn-default btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </form>
+
+                    <!--Favorite-->
+                    <a href="#" class="btn btn-default btn-sm btn-favorite">
+                        <span class="glyphicon glyphicon-star {% if album.is_favorite %} active {% endif %}"></span>
+                    </a>
+            </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

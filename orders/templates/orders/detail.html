@@ -1,0 +1,43 @@
+{% extends 'orders/base.html' %}
+{% block title %}Order details{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid songs-container">
+        <div class = "row">
+
+            <!-- Left Album Info -->
+            <div class = "col-sm-4 col-md-3">
+                <div class = "panel panel-default">
+                    <div class="panel-body">
+                        <h2>InternalId : {{ order.internalID }}</h2>
+                    </div>
+                </div>
+                <ul class="nav nav-pills" style="margin-bottom: 10px">
+                    <li class="active"><a href="{% url 'orders:index' %}">Back to all orders</a> </li>
+                </ul>
+            </div>
+
+            <!-- Right Song Info -->
+            <div class="col-sm-8 col-md-9">
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <h4>orderCreationTime : {{order.orderCreationTime}}</h4>
+                        <h4>merchantID : {{order.merchantID}}</h4>
+                        <h4>status : {{order.status}}</h4>
+                        <h4>amount : {{order.amount}}</h4>
+                        <h4>currency : {{order.currency}}</h4>
+                        <h4>orderID : {{order.orderID}}</h4>
+                        <h4>orderType : {{order.orderType}}</h4>
+                        <h4>orderDescription : {{order.orderDescription}}</h4>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
